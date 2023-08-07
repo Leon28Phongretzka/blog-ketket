@@ -3,7 +3,7 @@ export interface Post {
         name: string;
     }
     title: string;
-    body: string;
+    body: any;
     slug: {
         current: string;
     }
@@ -11,7 +11,8 @@ export interface Post {
     _createdAt: string;
     mainImage: {
         asset: {
-            url: string;
+            _ref: string;
+            _type: string;
         }
         alt: string;
     }

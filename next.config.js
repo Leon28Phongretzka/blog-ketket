@@ -3,6 +3,7 @@ const nextConfig = {
     images: {
         domains: [
             "links.papareact.com",
+            'cdn.sanity.io',
         ]
     }
 }

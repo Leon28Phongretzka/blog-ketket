@@ -29,12 +29,9 @@ export default async function Home() {
                   prefetch
                 >
                   <div>
-                    <h3>
+                    <h2>
                       {post.title}
-                    </h3>
-                    <h3>
-                      {post.slug.current}
-                    </h3>
+                    </h2>
                     <p>
                       {post.author.name}
                     </p>
