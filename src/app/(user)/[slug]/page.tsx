@@ -19,20 +19,6 @@ export default async function SlugPage({
 }) {
   const data = (await getData(params.slug)) as Post;
 
-  const PortableTextComponent = {
-    types: {
-      image: ({ value }: { value: any }) => (
-        <Image
-          src={urlFor(value).url()}
-          alt="Image"
-          className="rounded-lg"
-          width={800}
-          height={800}
-        />
-      ),
-    },
-  };
-
   return (
     <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
       <header className="pt-6 xl:pb-6">
@@ -52,11 +38,22 @@ export default async function SlugPage({
 
       <div className="divide-y divide-gray-200 pb-7 dark:divide-gray-700 xl:divide-y-0">
         <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-          <div className="prose max-w-none px-8 pb-8 pt-10 dark:prose-invert prose-lg text-justify">
-            <PortableText
-              value={data.body}
-              components={PortableTextComponent}
-            />
+          <div key={data._id} className="flex flex-1 px-4 py-4">
+            <div className="flex-1 prose max-w-none px-4 pl-8 md:pl-16 lg:pl-24 xl:pl-32 pr-8 pb-4 pt-8 dark:prose-invert prose-lg text-justify text-[22px]">
+                <PortableText
+                    value={data.body}
+                />
+            </div>
+            <div className="pt-8 pr-8 md:pr-16 lg:pr-24 xl:pr-32">
+                <Image
+                    src={urlFor(data.mainImage).url()} 
+                    alt={data.title} 
+                    width={500}
+                    height={500}   
+                    className="item-center rounded-lg"           
+                />
+            </div>
+            
           </div>
         </div>
       </div>

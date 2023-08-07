@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { client } from '../../../sanity/lib/client';
 import { Post } from '../../../sanity/lib/interface';
 import Link from 'next/link';
+import { urlFor } from "../../../sanity/lib/image"
 async function getData() {
   const query = `*[_type=="post"]`;
   const data = await client.fetch(query);
@@ -15,7 +16,7 @@ export default async function Home() {
         <h1>All Posts</h1>
       </div>
       <div>
-        <ul>
+        <ul className='flex flex-row'>
           {data.map((post) => (
             <li key={post._id}>
               <article>
@@ -28,6 +29,17 @@ export default async function Home() {
                   href={`/${post.slug.current}`}
                   prefetch
                 >
+                  <div>
+                    <div className="pt-8 sm:pr-8 md:pr-16 lg:pr-24 xl:pr-32">
+                        <Image
+                            src={urlFor(post.mainImage).url()} 
+                            alt={post.title} 
+                            width={200}
+                            height={200}   
+                            className="item-center rounded-lg"           
+                        />
+                    </div>
+                  </div>
                   <div>
                     <h2>
                       {post.title}
