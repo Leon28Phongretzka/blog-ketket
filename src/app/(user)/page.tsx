@@ -13,18 +13,14 @@ export default async function Home() {
   return (
     <div>
       <div>
-        <h1>All Posts</h1>
+        <h1 className='px-4 py-4 font-bold text-[26px] text-blue-400'>All Posts</h1>
       </div>
       <div>
-        <ul className='flex flex-row'>
+        <ul className='flex flex-row px-4 py-4'>
           {data.map((post) => (
             <li key={post._id}>
               <article>
-                <div>
-                  <p>
-                    {new Date(post._createdAt).toISOString().split('T')[0]}
-                  </p>
-                </div>
+                  
                 <Link 
                   href={`/${post.slug.current}`}
                   prefetch
@@ -46,6 +42,9 @@ export default async function Home() {
                     </h2>
                     <p>
                       {post.author.name}
+                    </p>
+                    <p>
+                      {new Date(post._createdAt).toISOString().split('T')[0]}
                     </p>
                   </div>
                 </Link>

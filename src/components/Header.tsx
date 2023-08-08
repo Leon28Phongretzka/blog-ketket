@@ -3,10 +3,26 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import logo from '../../public/maket.png'
-
+import { FaHome } from 'react-icons/fa'
 const links = [
-    
-
+    {
+        id: 1,
+        title: 'Series 1',
+        href: '/series1',
+        logo: '',
+    },
+    {
+        id: 2,
+        title: 'Series 2',
+        href: '/series2',
+        logo: '',
+    },
+    {
+        id: 3,
+        title: 'Other posts',
+        href: '/other',
+        logo: '',
+    }
 ]
 
 const Header = () => {
@@ -23,7 +39,7 @@ const Header = () => {
                             alt="Picture of the developer" 
                             className='rounded-full w-[60px] h-[60px]'
                         />
-                        <p>Kết Kết's Blog</p>
+                        <p className='text-[36px]'>Kết Kết's Blog</p>
                     </Link>
                 </div>
                 <div className='flex flex-row ml-auto items-center py-2'>
@@ -31,9 +47,16 @@ const Header = () => {
                 </div>
             </div>
         </div>
-        <div className='px-4 py-4 bg-blue-500'>
-            <div>
-                Navigation bar!
+        <div className='flex flex-row px-4 py-4 bg-blue-500'>
+            <Link href='/' className='px-4 py-4 hover:bg-violet-600 rounded-md'>
+                <FaHome className='text-[26px]'/>
+            </Link>
+            <div className='px-4 py-4'>
+                {links.map((link) => (
+                    <Link href={link.href} key={link.id} className='px-4 py-4 hover:bg-violet-600 rounded-md'>
+                        {link.title}
+                    </Link>
+                ))} 
             </div>
         </div>
     </div>
