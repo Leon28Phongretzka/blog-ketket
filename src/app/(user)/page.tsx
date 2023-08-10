@@ -12,13 +12,14 @@ async function getData() {
     _id,
     title,
     slug,
-    body,
     _createdAt,
     mainImage,
     author->{
       name,
       image,
-    }
+    },
+    description,
+    body,
   }`;
   const data = await client.fetch(query);
   return data;
@@ -34,12 +35,14 @@ export default async function Home() {
   const restPosts = sortedData.slice(3);
 
   return (
+    
 
-    <div className='flex flex-row justify-center'>
-        <div>
-          <h1 className='px-4 py-4 font-bold text-[26px] text-blue-400'>All Newest Posts</h1>
-        </div>
-        <div className='px-4 py-10 md:px-16 lg:px-30 divide-y divide-gray-400'>
+    <div className='flex flex-row justify-center lg:justify-start'>
+        
+        <div className='px-4 sm:py-4 md:px-16 lg:px-30 divide-y divide-gray-400'>
+          <div>
+            <h1 className='px-4 py-4 font-bold text-[26px] text-blue-400'>All Newest Posts</h1>
+          </div>
             <div className='flex flex-row divide-y-reverse divide-gray-400'>
               <ul className='px-4 py-4'>
                 {latestPosts.map((post) => (
@@ -50,7 +53,7 @@ export default async function Home() {
                         prefetch
                       >
                         <div>
-                          <div className="pt-8 sm:pr-8 md:pr-16 lg:pr-24 xl:pr-32">
+                          <div className="pt-8 pb-4 sm:pr-4 md:pr-16 lg:pr-24 xl:pr-32">
                               <Image
                                   src={urlFor(post.mainImage).url()} 
                                   alt={post.title} 
@@ -64,6 +67,9 @@ export default async function Home() {
                           <h2>
                             {post.title}
                           </h2>
+                          <p>
+                            {post.description}
+                          </p>
                           <p>
                             {post.author.name}
                           </p>
@@ -86,7 +92,7 @@ export default async function Home() {
                         className='divide-y-2'
                       >
                         <div className='py-4 grid grid-cols-2'>
-                          <div className="pt-8 sm:pr-4 md:pr-8 lg:pr-16 xl:pr-20">
+                          <div className="pt-8 pr-2 sm:pr-4 md:pr-8 lg:pr-16 xl:pr-20">
                               <Image
                                   src={urlFor(post.mainImage).url()} 
                                   alt={post.title} 
@@ -101,6 +107,9 @@ export default async function Home() {
                               </h2>
                               <p>
                                 {post.author.name}
+                              </p>
+                              <p>
+                                {post.description}
                               </p>
                               <p>
                                 {new Date(post._createdAt).toISOString().split('T')[0]}
@@ -137,6 +146,9 @@ export default async function Home() {
                               {post.title}
                             </h2>
                             <p>
+                              {post.description}
+                            </p>
+                            <p>
                               {post.author.name}
                             </p>
                           </div>
@@ -151,7 +163,7 @@ export default async function Home() {
               ))}
             </ul>
         </div>
-        <div className='px-16 pt-10'>
+        <div className='px-16 pt-10 hidden lg:block'>
           Banner Ads
         </div>
     </div>

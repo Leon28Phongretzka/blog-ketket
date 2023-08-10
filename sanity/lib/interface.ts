@@ -21,6 +21,7 @@ export interface Post {
             _type: string;
         }
         alt: string;
-    }
+    };
+    description: string;
 }
 
