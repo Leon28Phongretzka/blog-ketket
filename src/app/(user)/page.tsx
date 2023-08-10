@@ -34,11 +34,11 @@ export default async function Home() {
   const restPosts = sortedData.slice(3);
 
   return (
-    <div>
-      {/* <div>
-        <h1 className='px-4 py-4 font-bold text-[26px] text-blue-400'>All Newest Posts</h1>
-      </div> */}
-      <div className='flex flex-row justify-center'>
+
+    <div className='flex flex-row justify-center'>
+        <div>
+          <h1 className='px-4 py-4 font-bold text-[26px] text-blue-400'>All Newest Posts</h1>
+        </div>
         <div className='px-4 py-10 md:px-16 lg:px-30 divide-y divide-gray-400'>
             <div className='flex flex-row divide-y-reverse divide-gray-400'>
               <ul className='px-4 py-4'>
@@ -154,8 +154,7 @@ export default async function Home() {
         <div className='px-16 pt-10'>
           Banner Ads
         </div>
-      </div>
-      
     </div>
+
   )
 }
