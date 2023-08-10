@@ -27,7 +27,7 @@ const links = [
 
 const Header = () => {
   return (
-    <div className='bg-blue-400'>
+    <div className='bg-blue-400 z-10 fixed w-full'>
         <div className='flex flex-col'>
             <div className='px-4 py-4 flex flex-row'>
                 <div className='flex flex-row items-center gap-x-2'>

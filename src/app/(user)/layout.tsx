@@ -19,8 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <Header/>
-        {children}
+        <div className='pb-48'><Header/></div>
+          {children}
         <Footer/>
       </body>
     </html>
