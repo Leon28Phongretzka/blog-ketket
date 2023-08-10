@@ -35,10 +35,10 @@ export default async function SlugPage({
         <div className="space-y-1 text-center">
           <div className="space-y-10">
             <div className="text-left px-8">
-                <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+                <h1 className="pb-2 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
                     {data.title}
                 </h1>
-                <p className="text-base font-medium leading-6 text-teal-500">
+                <p className="py-4 text-base font-medium leading-6 text-teal-500">
                     {new Date(data._createdAt).toISOString().split("T")[0]}
                 </p>
                 <div className="flex flex-row items-center gap-x-2">
