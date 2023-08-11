@@ -47,7 +47,7 @@ export default function NavBar() {
                             alt="Picture of the developer" 
                             className='rounded-full w-[60px] h-[60px]'
                         />
-                        <p className='text-[36px]'>Kết Kết&apos;s Blog</p>
+                        <p className='text-[36px] font-extrabold'>Kết Kết&apos;s Blog</p>
                     </Link>
                 </div>
             </div>
