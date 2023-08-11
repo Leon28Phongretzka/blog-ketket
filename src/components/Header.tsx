@@ -35,7 +35,7 @@ export default function NavBar() {
 
   return (
 
-    <div className="border border-stone-800/90 rounded-lg mb-12 z-10 bg-stone-900/80 backdrop-blur-md bg-blue-400 fixed w-full">
+    <div className="border border-stone-800/90 rounded-md mb-12 z-10 bg-stone-900/80 backdrop-blur-md bg-blue-400 fixed w-full divide-y divide-neutral-600">
         <div className='flex flex-col'>
             <div className='px-4 py-4 flex flex-row'>
                 <div className='flex flex-row items-center gap-x-2'>
