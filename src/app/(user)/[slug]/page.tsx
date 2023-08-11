@@ -30,8 +30,8 @@ export default async function SlugPage({
 }) {
   const data = (await getData(params.slug)) as Post;
   return (
-    <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
-      <header className="pt-6 xl:pb-6">
+    <div className="divide-y divide-gray-600 xl:dark:divide-gray-700">
+      <header className="pt-6 pb-4 xl:pb-6">
         <div className="space-y-1 text-center">
           <div className="space-y-10">
             <div className="text-left px-8">
@@ -57,7 +57,7 @@ export default async function SlugPage({
         </div>
       </header>
 
-      <div className="divide-y divide-gray-200 pb-7 dark:divide-gray-700 xl:divide-y-0">
+      <div className="flex flex-row divide-y divide-gray-200 pb-7 dark:divide-gray-700 xl:divide-y-0">
         <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
           <div key={data._id} className="flex flex-1 px-4 py-4">
             <div className="flex-1 prose max-w-none px-4 pl-8 md:pl-16 lg:pl-24 xl:pl-32 pr-8 pb-4 pt-8 dark:prose-invert prose-lg text-justify text-[22px]">
@@ -71,11 +71,14 @@ export default async function SlugPage({
                     alt={data.title} 
                     width={500}
                     height={500}   
-                    className="item-center rounded-lg"           
+                    className="item-center rounded-lg lg:w-[250px] lg:h-[250px] md:w-[180px] md:h-[180px]"           
                 />
             </div>
             
           </div>
+        </div>
+        <div className="hidden lg:block px-16 justify-center divide-y divide-gray-200 dark:divide-gray-700">
+          Banner Ads
         </div>
       </div>
     </div>

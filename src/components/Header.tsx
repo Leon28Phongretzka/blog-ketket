@@ -39,7 +39,7 @@ const Header = () => {
                             alt="Picture of the developer" 
                             className='rounded-full w-[60px] h-[60px]'
                         />
-                        <p className='text-[36px]'>Kết Kết's Blog</p>
+                        <p className='text-[36px]'>Kết Kết&apos;s Blog</p>
                     </Link>
                 </div>
                 <div className='flex flex-row ml-auto items-center py-2'>

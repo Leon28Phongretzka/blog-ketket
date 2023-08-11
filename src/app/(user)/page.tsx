@@ -37,7 +37,7 @@ export default async function Home() {
   return (
     
 
-    <div className='flex flex-row justify-center lg:justify-start'>
+    <div className='flex flex-row justify-start lg:justify-center'>
         
         <div className='px-4 sm:py-4 md:px-16 lg:px-30 divide-y divide-gray-400'>
           <div>
