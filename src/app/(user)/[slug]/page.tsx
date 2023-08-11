@@ -71,7 +71,7 @@ export default async function SlugPage({
                     alt={data.title} 
                     width={500}
                     height={500}   
-                    className="item-center rounded-lg lg:w-[250px] lg:h-[250px] md:w-[180px] md:h-[180px]"           
+                    className="item-center rounded-lg sm:w-[150px] sm:h-[150px] md:w-[180px] md:h-[180px] lg:w-[250px] lg:h-[250px]"           
                 />
             </div>
             
