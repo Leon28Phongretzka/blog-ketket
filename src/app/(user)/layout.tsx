@@ -19,9 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <div className='pb-48'><Header/></div>
-          {children}
-        <Footer/>
+        <main>
+          <div className='pb-48'><Header/></div>
+            {children}
+          <Footer/>
+        </main>
       </body>
     </html>
   )
