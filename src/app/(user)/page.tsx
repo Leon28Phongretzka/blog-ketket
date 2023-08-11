@@ -49,7 +49,7 @@ export default async function Home() {
                   <li key={post._id}>
                     <article>
                       <Link 
-                        href={`/series1/${post.slug.current}`}
+                        href={`/${post.slug.current}`}
                         prefetch
                       >
                         <div>
