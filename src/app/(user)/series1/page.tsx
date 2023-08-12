@@ -9,7 +9,7 @@ import { Post } from '../../../../sanity/lib/interface';
 import { urlFor } from "../../../../sanity/lib/image"
 
 async function getData() {
-  const query = `*[_type=="post"]{
+  const query = `*[_type=="post"&&categories[0]._ref=='e6ee5d0a-fc4d-42e3-991a-f746a3eb18f2']{
     _id,
     title,
     slug,
@@ -21,7 +21,10 @@ async function getData() {
     },
     description,
     body,
-  }`;
+    categories[0]->{
+      categoryTitle,
+    },
+}`;
   const data = await client.fetch(query);
   return data;
 }
@@ -45,12 +48,12 @@ export default async function Home() {
               <ul className='px-4 py-4'>
                 {latestPosts.map((post) => (
                   <li key={post._id}>
-                    <article>
+                    <article className='max-w-1/2'>
                       <Link 
                         href={`/${post.slug.current}`}
                         prefetch
                       >
-                        <div>
+                        <div className='max-w-sm'>
                           <div className="pt-8 pb-4 sm:pr-4 md:pr-16 lg:pr-24 xl:pr-32">
                               <Image
                                   src={urlFor(post.mainImage).url()} 

@@ -47,7 +47,7 @@ export default async function Home() {
               <ul className='px-4 py-4'>
                 {latestPosts.map((post) => (
                   <li key={post._id}>
-                    <article>
+                    <article className='max-w-[400px]'>
                       <Link 
                         href={`/${post.slug.current}`}
                         prefetch
@@ -64,13 +64,13 @@ export default async function Home() {
                           </div>
                         </div>
                         <div>
-                          <h2>
+                          <h2 className='text-justify'>
                             {post.title}
                           </h2>
-                          <p>
+                          <p className='text-justify'>
                             {post.description}
                           </p>
-                          <p>
+                          <p className='text-justify'>
                             {post.author.name}
                           </p>
                           <p>

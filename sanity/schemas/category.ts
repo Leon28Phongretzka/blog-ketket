@@ -6,8 +6,8 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'title',
-      title: 'Title',
+      name: 'categoryTitle',
+      title: 'Category Title',
       type: 'string',
     }),
     defineField({

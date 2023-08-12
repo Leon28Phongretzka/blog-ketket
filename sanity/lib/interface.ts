@@ -23,5 +23,8 @@ export interface Post {
         alt: string;
     };
     description: string;
+    categories: {
+        categoryTitle: string;
+    };
 }
 
