@@ -41,6 +41,11 @@ export default defineType({
       ]
     }),
     defineField({
+      name: 'label',
+      title: 'Label',
+      type: 'string',
+    }),
+    defineField({
       name: 'categories',
       title: 'Categories',
       type: 'array',

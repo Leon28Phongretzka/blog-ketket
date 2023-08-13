@@ -25,6 +25,24 @@ async function getData() {
       categoryTitle,
     },
 }`;
+
+  const querySide = `*[_type=="post"&&categories[0]._ref=='e6ee5d0a-fc4d-42e3-991a-f746a3eb18f2']{
+    _id,
+    title,
+    slug,
+    _createdAt,
+    mainImage,
+    author->{
+      name,
+      image,
+    },
+    description,
+    body,
+    categories[0]->{
+      categoryTitle,
+    },
+}`;
+
   const data = await client.fetch(query);
   return data;
 }
@@ -65,13 +83,13 @@ export default async function Home() {
                           </div>
                         </div>
                         <div>
-                          <h2>
+                          <h2 className='text-justify'>
                             {post.title}
                           </h2>
-                          <p>
+                          <p className='text-justify'>
                             {post.description}
                           </p>
-                          <p>
+                          <p className='text-justify'>
                             {post.author.name}
                           </p>
                           <p>
