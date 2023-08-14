@@ -164,7 +164,44 @@ export default async function Home() {
             </ul>
         </div>
         <div className='px-16 pt-10 hidden lg:block'>
-          Banner Ads
+            <ul className='px-4 py-4'>
+                {restPosts.map((post) => (
+                  <li key={post._id}>
+                    <article className='flex flex-row'>
+                      <Link 
+                        href={`/${post.slug.current}`}
+                        prefetch
+                      >
+                        <div className='flex flex-row py-4 divine-y divine-gray-400'>
+                          <div className="pt-8 pb-4 pr-4">
+                              <Image
+                                  src={urlFor(post.mainImage).url()} 
+                                  alt={post.title} 
+                                  width={300}
+                                  height={300}   
+                                  className="item-center rounded-lg w-[100px] h-[100px]"           
+                              />
+                          </div>
+                          <div className="pt-8 pb-4 pr-4">
+                            <h2 className='text-justify text-[14px]'>
+                              {post.title}
+                            </h2>
+                            {/* <p className='text-justify text-[14px]'>
+                              {post.description}
+                            </p> */}
+                            <p className='text-justify text-[14px]'>
+                              {post.author.name}
+                            </p>
+                            <p>
+                              {new Date(post._createdAt).toISOString().split('T')[0]}
+                            </p>
+                        </div>
+                        </div>
+                      </Link>
+                    </article>
+                  </li>
+                ))}
+              </ul>
         </div>
     </div>
 
