@@ -20,6 +20,7 @@ async function getData() {
     },
     description,
     body,
+    label,
   }`;
   const data = await client.fetch(query);
   return data;
@@ -33,6 +34,10 @@ export default async function Home() {
   const latestPosts = sortedData.slice(0, 1);
   const highlightPosts = sortedData.slice(1, 3);
   const restPosts = sortedData.slice(3);
+
+  const specialPosts = sortedData.filter((post) => {
+    return post.label === 'special-item';
+  });
 
   return (
     
@@ -59,7 +64,7 @@ export default async function Home() {
                                   alt={post.title} 
                                   width={300}
                                   height={300}   
-                                  className="item-center rounded-lg w-[300px] h-[300px]"           
+                                  className="item-center rounded-lg w-[200px] h-[200px] lg:w-[250px] lg:h-[250px]"           
                               />
                           </div>
                         </div>
@@ -98,7 +103,7 @@ export default async function Home() {
                                   alt={post.title} 
                                   width={180}
                                   height={180}   
-                                  className="item-center rounded-lg w-[180px] h-[180px]"           
+                                  className="item-center rounded-lg w-[120px] h-[120px] md:w-[150px] md:h-[150px]"           
                               />
                           </div>
                           <div className='pt-12'>
@@ -163,9 +168,9 @@ export default async function Home() {
               ))}
             </ul>
         </div>
-        <div className='px-16 pt-10 hidden lg:block'>
+        <div className='px-4 pt-10 hidden lg:block'>
             <ul className='px-4 py-4'>
-                {restPosts.map((post) => (
+                {specialPosts.map((post) => (
                   <li key={post._id}>
                     <article className='flex flex-row'>
                       <Link 
@@ -179,7 +184,7 @@ export default async function Home() {
                                   alt={post.title} 
                                   width={300}
                                   height={300}   
-                                  className="item-center rounded-lg w-[100px] h-[100px]"           
+                                  className="item-center rounded-lg md:w-[60px] md:h-[60px] w-[100px] h-[100px]"           
                               />
                           </div>
                           <div className="pt-8 pb-4 pr-4">
