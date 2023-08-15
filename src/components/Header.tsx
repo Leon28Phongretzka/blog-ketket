@@ -26,6 +26,10 @@ const navItems = [
     path: "/other",
     name: "Other Posts",
   },
+  {
+    path: '/credit',
+    name: 'Credit',
+  }
 ];
 
 export default function NavBar() {

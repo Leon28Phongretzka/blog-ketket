@@ -42,8 +42,7 @@ export default async function Home() {
   return (
     
 
-    <div className='flex flex-row justify-start lg:justify-center'>
-        
+    <div className='flex flex-row justify-start lg:justify-center divide-x-2 divide-neutral-400'>
         <div className='px-4 sm:py-4 md:px-16 lg:px-30 divide-y divide-gray-400'>
           <div>
             <h1 className='px-4 py-4 font-bold text-[26px] text-blue-400'>All Newest Posts</h1>
@@ -168,8 +167,9 @@ export default async function Home() {
               ))}
             </ul>
         </div>
-        <div className='px-4 pt-10 hidden lg:block'>
-            <ul className='px-4 py-4'>
+        <div className='px-6 pt-10 hidden lg:block divide-y divide-neutral-600'>
+            <h1 className='text-[26px] font-bold pb-2'>Special Posts</h1>
+            <ul className='divide-y divide-neutral-600'>
                 {specialPosts.map((post) => (
                   <li key={post._id}>
                     <article className='flex flex-row'>
