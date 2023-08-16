@@ -77,7 +77,7 @@ export default async function SlugPage({
             
           </div>
         </div>
-        {/* <div className="hidden lg:block px-16 justify-center divide-y divide-gray-200 dark:divide-gray-700">
+        {/* <div className="hidden xl:block px-16 justify-center divide-y divide-gray-200 dark:divide-gray-700">
           Banner Ads
         </div> */}
       </div>
