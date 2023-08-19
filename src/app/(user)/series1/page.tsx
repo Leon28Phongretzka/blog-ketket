@@ -47,7 +47,7 @@ export default async function Home() {
 
     return (
 
-      <div className='flex flex-row justify-start lg:justify-center divide-x-2 divide-neutral-400 px-48'>
+    <div className='flex flex-row px-4 lg:px-16 xl:pl-32 xl:pr-16 justify-start lg:justify-center divide-x-2 divide-neutral-400'>
       <div className='px-4 sm:py-4 md:px-16 lg:px-30 divide-y divide-gray-400'>
         <div>
           <h1 className='px-4 py-4 font-bold text-[26px] text-blue-400'>All Newest Posts</h1>
@@ -56,7 +56,7 @@ export default async function Home() {
             <ul className='px-4 py-4 w-1/2'>
               {latestPosts.map((post) => (
                 <li key={post._id}>
-                  <article className='max-w-[400px]'>
+                  <article className='max-w-[300px] lg:max-w-[400px]'>
                     <Link 
                       href={`/${post.slug.current}`}
                       prefetch
@@ -91,7 +91,7 @@ export default async function Home() {
                 </li>
               ))}
             </ul>
-            <ul className='grid grid-rows-2 pl-4 py-4 divide-y divide-gray-400 w-1/2'>
+            <ul className='grid grid-rows-2 pl-4 py-4 divide-y divide-gray-400 w-full md:w-1/2'>
               {highlightPosts.map((post) => (
                 <li key={post._id}>
                   <article>
@@ -172,8 +172,8 @@ export default async function Home() {
             ))}
         </ul>
       </div>
-      <div className='px-6 pt-10 hidden xl:block divide-y divide-neutral-600 w-1/4'>
-          <h1 className='text-[26px] font-bold pb-2'>Special Posts</h1>
+      <div className='pl-4 pt-10 hidden xl:block divide-y divide-neutral-600 w-1/2'>
+          <h1 className='text-[20px] font-bold pb-2'>Special Posts</h1>
           <ul className='divide-y divide-neutral-600'>
               {specialPosts.map((post) => (
                 <li key={post._id}>
@@ -213,7 +213,7 @@ export default async function Home() {
               ))}
             </ul>
       </div>
-  </div>
+    </div>
 
 
   )
