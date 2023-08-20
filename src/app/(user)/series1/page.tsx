@@ -172,7 +172,7 @@ export default async function Home() {
             ))}
         </ul>
       </div>
-      <div className='pl-4 pt-10 hidden xl:block divide-y divide-neutral-600 w-1/2'>
+      <div className='pl-4 pt-10 hidden xl:block divide-y divide-neutral-600 w-1/3'>
           <h1 className='text-[20px] font-bold pb-2'>Special Posts</h1>
           <ul className='divide-y divide-neutral-600'>
               {specialPosts.map((post) => (
